@@ -1,0 +1,302 @@
+login as: netadmin
+netadmin@172.21.12.58's password:
+    ┌──────────────────────────────────────────────────────────────────────┐
+    │                 • MobaXterm Personal Edition v23.4 •                 │
+    │               (SSH client, X server and network tools)               │
+    │                                                                      │
+    │ ⮞ SSH session to netadmin@172.21.12.58                               │
+    │   • Direct SSH      :  ✓                                             │
+    │   • SSH compression :  ✓                                             │
+    │   • SSH-browser     :  ✓                                             │
+    │   • X11-forwarding  :  ✓  (remote display is forwarded through SSH)  │
+    │                                                                      │
+    │ ⮞ For more info, ctrl+click on help or visit our website.            │
+    └──────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-89-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Wed Nov 22 14:10:53 2023 from 172.21.12.169
+netadmin@netadmin:~$ sudo -i
+[sudo] password for netadmin:
+root@netadmin:~# touch /et/prueba.txt
+touch: cannot touch '/et/prueba.txt': No such file or directory
+root@netadmin:~# touch /etc/prueba.txt
+root@netadmin:~# ls /etc/prueba.txt
+/etc/prueba.txt
+root@netadmin:~# ls -l /usr/bin/whatis
+ls: cannot access '/usr/bin/whatis': No such file or directory
+root@netadmin:~# groupadd of_tics
+root@netadmin:~# adduser dbonilla
+adduser: The user `dbonilla' already exists.
+root@netadmin:~# adduser Fernandas
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+root@netadmin:~# adduser pedro --ingroup of_tics
+Adding user `pedro' ...
+Adding new user `pedro' (1008) with group `of_tics' ...
+Creating home directory `/home/pedro' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for pedro
+Enter the new value, or press ENTER for the default
+        Full Name []: Pedro Ortiz
+        Room Number []: 1
+        Work Phone []: 098675733
+        Home Phone []: 1
+        Other []: 1
+Is the information correct? [Y/n] y
+root@netadmin:~# adduser ana --ingroup of_tics
+Adding user `ana' ...
+Adding new user `ana' (1009) with group `of_tics' ...
+Creating home directory `/home/ana' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for ana
+Enter the new value, or press ENTER for the default
+        Full Name []: Ana Ortiz
+        Room Number []: 1
+        Work Phone []: 741852963
+        Home Phone []: 1
+        Other []: 1
+Is the information correct? [Y/n] y
+root@netadmin:~# adduser laura --ingroup of_tics
+Adding user `laura' ...
+Adding new user `laura' (1010) with group `of_tics' ...
+Creating home directory `/home/laura' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for laura
+Enter the new value, or press ENTER for the default
+        Full Name []: Laura ortiz
+        Room Number []: 852741963
+        Work Phone []: 741258963
+        Home Phone []: 1
+        Other []: 1
+Is the information correct? [Y/n] y
+root@netadmin:~# passwd laura
+New password:
+Retype new password:
+passwd: password updated successfully
+root@netadmin:~# ^C
+root@netadmin:~# ls /home/
+aespin  ana  boni  dbonilla  fernandez  galtamirano  laura  netadmin  pedro  tcastillo
+root@netadmin:~# mv prueba.txt /home/laura/
+mv: cannot stat 'prueba.txt': No such file or directory
+root@netadmin:~# mv prueba1.txt /home/laura/
+root@netadmin:~# ls -l
+total 0
+root@netadmin:~# su laura
+laura@netadmin:/root$ nano prueba1.txt
+bash: nano: command not found
+laura@netadmin:/root$ chown laura prueba1.txt
+chown: cannot access 'prueba1.txt': Permission denied
+laura@netadmin:/root$ sudo -i
+[sudo] password for laura:
+laura is not in the sudoers file.  This incident will be reported.
+laura@netadmin:/root$ sudo -i
+[sudo] password for laura:
+Sorry, try again.
+[sudo] password for laura:
+sudo: 1 incorrect password attempt
+laura@netadmin:/root$
+laura@netadmin:/root$ sudo -i
+[sudo] password for laura:
+Sorry, try again.
+[sudo] password for laura:
+Sorry, try again.
+[sudo] password for laura:
+sudo: 3 incorrect password attempts
+laura@netadmin:/root$ su netadmin
+Password:
+netadmin@netadmin:/root$ sudo -i
+[sudo] password for netadmin:
+root@netadmin:~# ls -l
+total 0
+root@netadmin:~# mv prueba1.txt /etc/home
+mv: cannot stat 'prueba1.txt': No such file or directory
+root@netadmin:~# mv prueba1.txt /root/home
+mv: cannot stat 'prueba1.txt': No such file or directory
+root@netadmin:~# mv prueba1.txt /home
+mv: cannot stat 'prueba1.txt': No such file or directory
+root@netadmin:~# nano prueba1.txt
+-bash: nano: command not found
+root@netadmin:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:netadmin
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:netadmin
+floppy:x:25:
+tape:x:26:
+sudo:x:27:netadmin
+audio:x:29:
+dip:x:30:netadmin
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:netadmin
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+messagebus:x:104:
+systemd-timesync:x:105:
+input:x:106:
+sgx:x:107:
+kvm:x:108:
+render:x:109:
+lxd:x:110:netadmin
+_ssh:x:111:
+netadmin:x:1000:
+tics:x:1002:dbonilla,tcastillo
+finanzas:x:1003:
+financiero:x:1001:
+of_tics:x:1004:
+root@netadmin:~# getent group tics
+tics:x:1002:dbonilla,tcastillo
+root@netadmin:~# ls -l
+total 0
+root@netadmin:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:netadmin
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:netadmin
+floppy:x:25:
+tape:x:26:
+sudo:x:27:netadmin
+audio:x:29:
+dip:x:30:netadmin
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:netadmin
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+messagebus:x:104:
+systemd-timesync:x:105:
+input:x:106:
+sgx:x:107:
+kvm:x:108:
+render:x:109:
+lxd:x:110:netadmin
+_ssh:x:111:
+netadmin:x:1000:
+tics:x:1002:dbonilla,tcastillo
+finanzas:x:1003:
+financiero:x:1001:
+of_tics:x:1004:
+root@netadmin:~# ls -l /home/
+total 0
+drwxr-x--- 2 aespin      tics        57 Nov 21 15:28 aespin
+drwxr-x--- 2 ana         of_tics     57 Nov 22 17:11 ana
+drwxr-x--- 2 boni        tics        57 Nov 21 15:07 boni
+drwxr-x--- 2 dbonilla    tics        97 Nov 21 17:02 dbonilla
+drwxr-x--- 2 fernandez   financiero  57 Nov 21 16:53 fernandez
+drwxr-x--- 3 galtamirano tics       111 Nov 21 16:07 galtamirano
+drwxr-x--- 3 laura       of_tics     76 Nov 22 17:18 laura
+drwxr-x--- 4 netadmin    netadmin   156 Nov 22 16:51 netadmin
+drwxr-x--- 2 pedro       of_tics     57 Nov 22 17:10 pedro
+drwxr-x--- 2 tcastillo   tics        57 Nov 21 15:21 tcastillo
+root@netadmin:~# chmod 775 prueba1.txt
+chmod: cannot access 'prueba1.txt': No such file or directory
+root@netadmin:~# mkdir examen.txt
+root@netadmin:~# chmod 775 examen.txt
+root@netadmin:~# ls -
+ls: cannot access '-': No such file or directory
+root@netadmin:~# ls -l
+total 0
+drwxrwxr-x 2 root root 6 Nov 22 17:33 examen.txt
+root@netadmin:~# userdel aespin
+root@netadmin:~# ls -l /home/
+total 0
+drwxr-x--- 2        1006 tics        57 Nov 21 15:28 aespin
+drwxr-x--- 2 ana         of_tics     57 Nov 22 17:11 ana
+drwxr-x--- 2 boni        tics        57 Nov 21 15:07 boni
+drwxr-x--- 2 dbonilla    tics        97 Nov 21 17:02 dbonilla
+drwxr-x--- 2 fernandez   financiero  57 Nov 21 16:53 fernandez
+drwxr-x--- 3 galtamirano tics       111 Nov 21 16:07 galtamirano
+drwxr-x--- 3 laura       of_tics     76 Nov 22 17:18 laura
+drwxr-x--- 4 netadmin    netadmin   156 Nov 22 16:51 netadmin
+drwxr-x--- 2 pedro       of_tics     57 Nov 22 17:10 pedro
+drwxr-x--- 2 tcastillo   tics        57 Nov 21 15:21 tcastillo
+root@netadmin:~# userdel -r aespin
+userdel: user 'aespin' does not exist
+root@netadmin:~# ls -l /home/
+total 0
+drwxr-x--- 2        1006 tics        57 Nov 21 15:28 aespin
+drwxr-x--- 2 ana         of_tics     57 Nov 22 17:11 ana
+drwxr-x--- 2 boni        tics        57 Nov 21 15:07 boni
+drwxr-x--- 2 dbonilla    tics        97 Nov 21 17:02 dbonilla
+drwxr-x--- 2 fernandez   financiero  57 Nov 21 16:53 fernandez
+drwxr-x--- 3 galtamirano tics       111 Nov 21 16:07 galtamirano
+drwxr-x--- 3 laura       of_tics     76 Nov 22 17:18 laura
+drwxr-x--- 4 netadmin    netadmin   156 Nov 22 16:51 netadmin
+drwxr-x--- 2 pedro       of_tics     57 Nov 22 17:10 pedro
+drwxr-x--- 2 tcastillo   tics        57 Nov 21 15:21 tcastillo
+root@netadmin:~#
